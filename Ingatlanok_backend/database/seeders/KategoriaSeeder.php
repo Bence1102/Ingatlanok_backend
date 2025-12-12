@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class KategoriakSeeder extends Seeder
+class KategoriaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -22,7 +22,7 @@ class KategoriakSeeder extends Seeder
         ];
 
         foreach ($kategoriak as $kat) {
-            DB::table('kategoriak')->insert([
+            DB::table('kategorias')->insert([
                 'kategoria_nev' => $kat,
                 'created_at' => now(),
                 'updated_at' => now(),
