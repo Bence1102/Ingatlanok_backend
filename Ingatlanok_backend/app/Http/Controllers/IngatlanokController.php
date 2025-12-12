@@ -13,7 +13,8 @@ class IngatlanokController extends Controller
      */
     public function index()
     {
-        //
+        $ingatlanok=ingatlanok::with('kategoria')->get();
+        return response()->json($ingatlanok)
     }
 
     /**
@@ -29,7 +30,19 @@ class IngatlanokController extends Controller
      */
     public function store(StoreingatlanokRequest $request)
     {
-        //
+        $data = $request->validated();
+        $ingatlan = ingatlanok::create([
+            'kategoria_id'=> $data['kategoria_id'],
+            'leiras'=> $data['leiras'],
+            'datum'=> $data['datum'],
+            'tehermentes'=> $data['tehermentes'],
+            'ar'=> $data['ar'],
+            'kepUrl'=> $data['kepUrl'],
+        ]);
+        return response()->json([
+            'message'=> 'Ingatlan sikeresen létrehozva',
+            'data'=> $ingatlan
+        ], 201);
     }
 
     /**
@@ -61,6 +74,9 @@ class IngatlanokController extends Controller
      */
     public function destroy(ingatlanok $ingatlanok)
     {
-        //
+        $ingatlanok->delete();
+        return response()->json([
+            'message'=>'Ingatlan törlése'
+        ]);
     }
 }
