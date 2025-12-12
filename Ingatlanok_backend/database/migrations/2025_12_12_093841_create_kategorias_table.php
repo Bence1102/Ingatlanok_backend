@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('kategorias', function (Blueprint $table) {
             $table->id();
+            $table->enum('kategoria_nev', [
+                'ház',
+                'lakás',
+                'építési telek',
+                'garázs',
+                'mezőgazdasági épület',
+                'ipari ingatlan'
+            ]);
             $table->timestamps();
         });
     }

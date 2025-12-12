@@ -9,4 +9,11 @@ class kategoria extends Model
 {
     /** @use HasFactory<\Database\Factories\KategoriaFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'id',
+        'kategoria_nev',
+        'created_at',
+        'updated_at',
+    ];
 }
