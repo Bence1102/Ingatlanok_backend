@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ingatlanoks', function (Blueprint $table) {
+        /*Schema::create('ingatlanoks', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('kategoriak_id')->unsigned()->nullable();
             $table->text('leiras');
@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('ar');
             $table->string('kepUrl', 255);
             $table->foreign('kategoriak_id')->references('id')->on('kategoria')->nullOnDelete();
-        });
+        });*/
     }
 
     /**
