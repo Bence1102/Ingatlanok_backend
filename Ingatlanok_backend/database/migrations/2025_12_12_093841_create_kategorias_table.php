@@ -22,7 +22,7 @@ return new class extends Migration
                 'ipari ingatlan'
             ]);
             $table->timestamps();
-        });
+        });;
     }
 
     /**

@@ -11,16 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ingatlanoks', function (Blueprint $table) {
-            $table->id();
-            
-            $table->text('leiras');
-            $table->timestamp('datum')->useCurrent();
-            $table->boolean('tehermentes');
-            $table->integer('ar');
-            $table->string('kepUrl', 255);
-            $table->foreignId('kategoriak_id')->nullable()->constrained('kategorias')->nullOnDelete();
-        });
+       Schema::create('ingatlanoks', function (Blueprint $table) {
+    $table->id();
+    $table->text('leiras');
+    $table->timestamp('datum')->useCurrent(); 
+    $table->boolean('tehermentes');
+    $table->integer('ar');
+    $table->string('kepUrl', 255);
+    $table->foreignId('kategoriak_id')->nullable()->constrained('kategorias')->nullOnDelete();
+    $table->timestamps(); 
+});
     }
 
     /**
