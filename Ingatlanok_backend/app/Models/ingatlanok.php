@@ -9,7 +9,7 @@ class ingatlanok extends Model
 {
     /** @use HasFactory<\Database\Factories\IngatlanokFactory> */
     use HasFactory;
-    protected $filles=[
+    protected $fillable=[
         'kategoria_id',
         'leiras',
         'datum',
