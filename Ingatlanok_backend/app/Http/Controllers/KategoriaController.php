@@ -14,10 +14,9 @@ class KategoriaController extends Controller
     public function index()
     {
         //
-        $kategoriak = Kategoria::all();
-
-        
-        return view('kategoria.index', ['kategoriak' => $kategoriak]);
+        return response()->json(
+        Kategoria::all()
+        );
     }
 
     /**
